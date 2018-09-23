@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'cryptowallet-argon';
-  src:  url('../../fonts/cryptowallet-argon-5hvuhg.eot');
-  src:  url('../../fonts/cryptowallet-argon-5hvuhg.eot#iefix') format('embedded-opentype'),
-    url('../../fonts/cryptowallet-argon-5hvuhg.ttf') format('truetype'),
-    url('../../fonts/cryptowallet-argon-5hvuhg.woff') format('woff'),
-    url('../../fonts/cryptowallet-argon-5hvuhg.svg#cryptowallet-argon') format('svg');
+  src:  url('../../fonts/cryptowallet-argon377f-5hvuhg.eot');
+  src:  url('../../fonts/cryptowallet-argon377f-5hvuhg.eot#iefix') format('embedded-opentype'),
+    url('../../fonts/cryptowallet-argon377f-5hvuhg.ttf') format('truetype'),
+    url('../../fonts/cryptowallet-argon377f-5hvuhg.woff') format('woff'),
+    url('../../fonts/cryptowallet-argon377f-5hvuhg.svg#cryptowallet-argon') format('svg');
   font-weight: normal;
   font-style: normal;
 }

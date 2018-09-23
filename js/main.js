@@ -115,163 +115,41 @@ jQuery(function ($) {
         ]
     });
 
-	//HighCharts 2
-	if ($('.line-chart2').length > 0) {
-		Highcharts.chart('chart-container2', {
-	tooltip: {
-		formatter: function() {
-
-                if(this.series.name == 'ETH' || this.series.name == 'Users' ){
-                  return false ;
-                } else if (this.series.name == 'AVG') {
-				  return '<b>'+ this.key +'</b><br/>';
-				} else {
-                    return '<b>'+ this.series.name +'</b><br/>'+
-                    this.x +': '+ this.y;
-				}   
-            }
-	},
-    title: {
-        text: 'Combination chart'
-    },
-    xAxis: {
-		allowDecimals:false,
-		min: 0.5,
-		max: 10.5,	
-        categories: ['12 Sep', '13 Sep', '14 Sep', '15 Sep', '16 Sep', '17 Sep', '18 Sep', '19 Sep', '20 Sep', '21 Sep', '22 Sep', '23 Sep']
-    },
-    labels: {		
-        items: [{
-            html: 'Avg. investment: 0.25 ETH',
-            style: {
-                left: '50px',
-                top: '18px',
-                color: (Highcharts.theme && Highcharts.theme.textColor) || 'white'
-            }
-        }]
-    },
-    legend: {
-            itemStyle: {
-                color: '#A0A0A0'
+    //Highchart
+    if ($('.pie-chart').length > 0) {
+        Highcharts.chart('container', {
+            chart: {
+                type: 'pie',
+                options3d: {
+                    enabled: true,
+                    alpha: 45
+                }
             },
-            itemHoverStyle: {
-                color: '#FFF'
+            title: {
+                text: 'Contents of Highsoft\'s weekly fruit delivery'
             },
-            itemHiddenStyle: {
-               color: '#444'
-            }           
-    },		
-	yAxis: [{
-		labels: {
-                enabled: false
-        },
-		title: {
-                enabled: false
-        },
-		minorGridLineWidth: 0.2,
-        gridLineWidth: 0.1,
-        alternateGridColor: null,	
-	}],
-	
-	plotOptions: {
-        column: {
-
-        }, 
-		spline: {
-			dashStyle: 'Dot',
-			marker: { enabled: false },
-			states: { hover: { enabled: false } },
-		},
-		area: {
-			marker: { enabled: false },
-			states: { hover: { enabled: false } },
-			style: 'dotted',
-			fillOpacity: 0.2,
-		},
-		pie: {
-	
-		}
-
-    },
-	
-    series: [{
-        type: 'column',
-        name: '',
-		showInLegend: false,
-        data: [6, 12, 51, 82, 119, 136, 173, 219, 242, 284, 312, 392],
-		color: '#78ee06',
-		pointWidth: 20,
-		shadow: {
-            color: '#78ee06',
-            width: 5,
-            offsetX: 0,
-            offsetY: 0
-        },
-
-    },
-	{ //Line
-        type: 'area',
-        name: 'ETH',
-		
-        data: [0.2*10, 1.4*10, 5.69*10, 16.44*10, 21.27*10, 25.57*10, 27.3*10, 32.53*10, 36.12*10, 43.38*10, 52.35*10, 77.02*10],
-        marker: {
-            lineWidth: 2,
-            lineColor: Highcharts.getOptions().colors[3],
-            fillColor: 'white'
-        },
-
-		color: '#ee06a4',
-		shadow: {
-            color: '#ee06a4',
-            width: 3,
-            offsetX: 0,
-            offsetY: 0
-        }
-    }, 	{ // Line 2
-		type: 'spline',
-        name: 'Users',
-        data: [6, 12, 51, 82, 119, 136, 173, 219, 242, 284, 312, 392],
-		color: '#78ee06',
-		shadow: {
-            color: '#78ee06',
-            width: 3,
-            offsetX: 0,
-            offsetY: 0
-        },
-		formatter: function () {
-           return (this.value / 5) ;
-        }
-    },	
-		{
-        type: 'pie',
-        name: 'AVG',
-        data: [		
-		{
-            name: '0.25 AVG',
-			sliced: true,
-            selected: true,
-            y: 18,
-            color: 'rgba(150,100,50,0.1)' // AVG color
-        }, {
-            name: '0.01 MIN',
-            y: 16,
-            color: 'rgba(200,122,200,0.7)' // Joe's color
-        },
-		 {
-            name: '5 MAX',
-            y: 21,
-            color: 'rgba(200,122,200,1)' // John's color
-        },
-		],
-        center: [100, 80],
-        size: 100,
-        showInLegend: false,
-        dataLabels: {
-            enabled: false
-        }
-    }]
-	});
-	}
+            subtitle: {
+                text: '3D donut in Highcharts'
+            },
+            plotOptions: {
+                pie: {
+                    innerSize: 100,
+                    depth: 45
+                }
+            },
+            series: [{
+                name: 'Delivered amount',
+                data: [
+                    ['Presale 20%', 7.2],
+                    ['Reserve 10%', 3.6],
+                    ['Token Sale 50%', 18],
+                    ['Bounties 10%', 3.6],
+                    ['Dispensaries 5%', 1.8],
+                    ['Advisory Board 5%', 1.8]
+                ]
+            }]
+        });
+    }
 
     //SVG Line animation
     $(".roadmap-to-success").each(function () {
